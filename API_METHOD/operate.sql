@@ -12,4 +12,4 @@ SELECT * FROM amendments WHERE adopted=1 AND YEAR(date) > 2012 AND YEAR(date) < 
 SELECT bill_id, title, description
 FROM bills b
 JOIN sessions AS s ON b.session_id = s.session_id
-WHERE last_action='Enacted' AND state_id = 1;
+WHERE last_action='Enacted' AND state_id = 1 limit 10;

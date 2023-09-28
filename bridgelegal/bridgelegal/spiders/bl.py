@@ -17,7 +17,7 @@ class BlSpider(scrapy.Spider):
     base_url = "http://www.lawsuit-information-center.com/category/mass-torts/"
     def parse(self, response):
         case_list = response.xpath('//div[@id="custom_html-6"]//li/ul/li/a')
-        # exclute state info
+        # exclude state info
         case_list = case_list[0:12]
         for c in case_list:
             case = c.xpath('./text()').extract_first()
@@ -26,11 +26,6 @@ class BlSpider(scrapy.Spider):
             yield scrapy.Request(url=href, callback=self.parse_second, meta={'case': case, 'page': 1})
 
     def parse_second(self, response):
-        # if self.page < 2:
-        #     self.page = self.page + 1
-        #     url = str(self.base_url) + str(self.page) + '-cp01.01.02.00.00.00.html'
-        #     # scrapy.Requestju是scrapy 的get 请求
-        #     yield scrapy.Request(url=url, callback=self.parse)
         article_list = response.xpath('//div[@class="inner-wrapper"]//h2//a')
         date_list = response.xpath('//div[@class="inner-wrapper"]//time')
 
