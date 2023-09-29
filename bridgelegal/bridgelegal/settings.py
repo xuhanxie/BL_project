@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = "bridgelegal.spiders"
 DB_HOST = 'localhost'
 DB_PORT = 3306
 DB_USER = 'root'
-DB_PASSWORD = 'XieXuhan23.'
+DB_PASSWORD = '********'
 DB_NAME = 'bridge_legal'
 DB_CHARSET = 'utf8'
 

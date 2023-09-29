@@ -11,7 +11,7 @@ base_url = 'https://api.legiscan.com/?key=' + APIKEY
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'XieXuhan23.',
+    'password': '*********',
     'database': 'bridge_legal',
 }
 
